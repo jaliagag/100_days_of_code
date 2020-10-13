@@ -19,8 +19,3 @@
 15. Mi banda favorita es Tool
 16. Solía tener el pelo largo - muy largo
 17. No tengo mucha actividad en las redes sociales
-
-npm i webpack webpack-cli webpack-dev-server @fortawesome/fontawesome-free fibers sass sass-loader node-sass css-loader autoprefixer postcss-loader mini-css-extract-plugin --save-dev
-npm i --save jquery popper.js bootstrap
-npx webpack --config webpack.config.js
-npm i  

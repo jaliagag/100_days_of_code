@@ -1,3 +1,19 @@
+body {
+  font-family: "Josefin Sans", sans-serif; }
+
+.titulo01 {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around; }
+
+.name {
+  margin-top: 15px; }
+
+.contact_links {
+  margin-top: 15px;
+  display: flex;
+  align-content: flex-end; }
+
 #profPic {
   width: 150px;
   height: 200px; }

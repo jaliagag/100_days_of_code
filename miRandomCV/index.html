@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--LIBRARIES-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.9/fullpage.css">
     <link rel="stylesheet" href="styles.css">
     <!--LIBRARIES-->
     <!--FONTS-->
@@ -14,22 +15,24 @@
     <title>José MF Aliaga - mySimple CV</title>
 </head>
 <body>
-    <section class="titulo01">
-        <image src="./assets/profile_pic.PNG" alt="profile pic" id="profPic"></image>
-        <div class="title_2">
-            <div class="name">JOSÉ MANUEL FRANCISCO ALIAGA</div>
-            <div class="contact_links">
-                <a href="https://www.linkedin.com/in/josealiagatr/" target="_blank"><i class="fa fa-linkedin-square" style="font-size:36px"></i> Linkedin</a>
-                <a href="https://github.com/jaliagag"><i class="fa fa-github" style="font-size:36px;color:black"></i> GitHub</a>
-                <a href="https://wa.me/5493513022380?text=Hola!%20Quiero%20contactarme%20con%20vos" targe="_blank"><i class="fa fa-whatsapp" style="font-size:36px;color:green"></i> Whatsapp - +54 9 351 302 2380</a>
+    <div id="fullpage">
+        <div class="section" id="titulo01">
+            <image src="./assets/profile_pic.PNG" alt="profile pic" id="profPic"></image>
+            <div class="title_2">
+                <div class="name">JOSÉ MANUEL FRANCISCO ALIAGA</div>
+                <div class="contact_links">
+                    <a href="https://www.linkedin.com/in/josealiagatr/" target="_blank" class="link_up"><i class="fa fa-linkedin-square" style="font-size:36px"></i> Linkedin</a>
+                    <a href="https://github.com/jaliagag" target="_blank" class="link_up"><i class="fa fa-github" style="font-size:36px;color:black"></i> GitHub</a>
+                    <a href="https://wa.me/5493513022380?text=Hola!%20Quiero%20contactarme%20con%20vos" target="_blank" class="link_up"><i class="fa fa-whatsapp" style="font-size:36px;color:green"></i> Whatsapp - +54 9 351 302 2380</a>
+                </div>
             </div>
         </div>
-    </section>
-    <section class="body">
-
-    </section>
+        <div class="section" id="body">Sección 2</div>
+        <div class="section" id="end">Sección 3</div>
+        <div class="section"><i class="fa fa-empire" style="font-size:26px;color:red" onclick="rebelScum()" id="longLiv"></i></div>
+    </div>
+    
     <section class="end">
-        <i class="fa fa-empire" style="font-size:26px;color:red" onclick="rebelScum()" id="longLiv"></i>
     </section>
 
     <script src="index.js"></script>

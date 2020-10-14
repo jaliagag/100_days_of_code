@@ -9,6 +9,7 @@ const seccionesPagina = new fullpage('#fullpage', {
     ,loopBottom: false
     
     ,navigation: true
+    ,menu: '#menu'
     ,anchors: ['inicio', 'productos', 'contacto']
     ,navigationTooltips: ['Inicio', 'Productos', 'Contacto']
     ,showActiveTooltip: false

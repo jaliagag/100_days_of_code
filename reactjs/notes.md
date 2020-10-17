@@ -31,14 +31,26 @@ Encapsula el código HTML, CSS y JS.
 ```js
 npx create-react-app my-app
 cd my-app
-npm start
-npm run build
-npm test
+npm start // inicia y crea el servidor en desarrollo
+npm run build // convertir el código de desarrollo en código de producción - convierte código en JS
+npm test // ejecutar archivos de intermedio
 npm run eject
 npm run eject
 ```
 
-8:20
+No escribimos HTML - SOLO js
+
+El código dentro de App.js que parece HTML es JSX, no HTML. En JSX usamos `className` en vez de `class`. Es JavaScript > babel repl
+
+React usa babel que convierte código de react en código js puro.
+
+| HTML | JS |
+| ---- |---- |
+| `<h1>hello world</h1>` | `React.createElement("h1", null, "hello world!");` |
+
+Como esto es difícil de manetener, tenemos en react este código que parece HTML, que es JS, JSX.
+
+57:00
 
 ## Acamica
 

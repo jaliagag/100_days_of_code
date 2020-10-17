@@ -1,5 +1,7 @@
 # ReactJS
 
+## Fatz Tech
+
 <https://www.youtube.com/watch?v=zIY87vU33aA&t=2s>
 
 Js library - diseñar interfaces de usuario, elementos en pantalla - y poder reutilizarlos
@@ -11,13 +13,34 @@ Usa el Virtual Dom -- hace que sea más rápida la interfaz.
 - components: pequeñas etiquetas html que se pueden reutilizar
 - server side rendering: enviar la interfaz a medida que se vaya pidiendo
 
-## COMPONENTES
+### COMPONENTES
 
 dividir una aplicación grande en pequeñas parets - componenetes; encapsulan código. Los componentes se ven como etiquetas html
 
 Encapsula el código HTML, CSS y JS.
 
+- React Native: hacer que funcione en android/iOs
+- next.js: framework de server-side rendering;
+- graphQL: lenguaje para solicitar datos y especificar qué necesitas y qué necesitas enviar; para mantener el código y las consultas que se hacen desde el servidor
+- redux: manejador de estados de la app; mejora el mantenimiento del código de react
+- MERN: stack, define muchas tecnologías (mongo express react node) -- app entera con js
+- ionic4: relacionado con angular (y vue) - app movil
+
+<https://reactjs.org>
+
+```js
+npx create-react-app my-app
+cd my-app
+npm start
+npm run build
+npm test
+npm run eject
+npm run eject
+```
+
 8:20
+
+## Acamica
 
 Renderizar datos en el DOM.
 

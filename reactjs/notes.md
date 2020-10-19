@@ -50,7 +50,97 @@ React usa babel que convierte código de react en código js puro.
 
 Como esto es difícil de manetener, tenemos en react este código que parece HTML, que es JS, JSX.
 
-57:00
+```js
+function Helloworld(props) {
+  return (
+    <div id="hello">
+      <p>Hellow World</p>
+    </div>
+  )
+}
+// formas de crear un componente
+// variable
+const App = () => <div>This is my component: <Helloworld/> </div>
+
+// clase
+class App extends React.Component {
+  render() {
+    return <div>This is my component: <Helloworld/> </div>
+  }
+}
+// función
+function App() {
+  return (
+    <div>
+      This is my component: <Helloworld />
+    </div>
+  );
+}
+```
+
+### Props
+
+Datos que le pasamos de afuera hacia dentro del componente.
+
+```js
+function Helloworld(props) {
+  return (
+    <div id="hello">
+      <h3>{props.subtitle}</h3>
+      {props.mytext}
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <div>
+      This is my component: 
+      <Helloworld mytext="wharup men" subtitle="lorem ipsum"/> 
+      <Helloworld mytext="holis" subtitle="otro subtítulo"/> 
+      <Helloworld mytext="holisss"/>
+    </div>
+  );
+}
+```
+
+### State
+
+Datos internos de un componente. Cada vez que llamemos a Helloworld, cada componente tiene su propio estado y funciona de manera independiente.
+
+```js
+class Helloworld extends React.Component {
+
+  state = {
+    show: true
+  }
+
+  toggleShow = () => {
+    this.setState({show: !this.state.show})
+  }
+
+  render() {
+    if (this.state.show) {
+      return (
+        <div id="hello">
+          <h3>{this.props.subtitle}</h3>
+          {this.props.mytext}
+          {/* <button onClick={this.toggleShow.bind(this)}>Cambiar estado</button> */}
+          <button onClick={this.toggleShow}>Cambiar estado</button>
+          {/* onClick es un evento*/}
+        </div>
+      )
+    } else {
+      return <h1>
+          No hay elementos
+          <button onClick={this.toggleShow}> Cambiar de nuevo de estado</button>
+        </h1>
+    }
+  }
+}
+```
+
+1:16:18
 
 ## Acamica
 

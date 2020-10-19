@@ -9,7 +9,7 @@ Js library - diseñar interfaces de usuario, elementos en pantalla - y poder reu
 Usa el Virtual Dom -- hace que sea más rápida la interfaz.
 
 - Vista declarativas - declarative views
-- virtual DOWM
+- virtual DOM
 - components: pequeñas etiquetas html que se pueden reutilizar
 - server side rendering: enviar la interfaz a medida que se vaya pidiendo
 
@@ -140,7 +140,25 @@ class Helloworld extends React.Component {
 }
 ```
 
-1:16:18
+En React, cuando ponemos algo en de JSX dentro de `{}` esto le indica que es código JS.
+
+```jsx
+render() {
+  return <div>
+    { 5 + 5 }
+  </div>
+}
+```
+
+### Task App
+
+Un componente solo puede retornar un elemento a la vez
+
+#### Método MAP
+
+`a.map((e) => e + 3)`. El método map _NO_ modifica el array.
+
+1:43:23
 
 ## Acamica
 

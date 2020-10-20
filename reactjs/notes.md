@@ -174,7 +174,9 @@ Cambiar estilos de manera dinámica; la idea de usar una función es para aplica
 
 ### PropTypes
 
-Typos de datos de las propiedades, de los props
+Tipos de datos de las propiedades, de los props. Advertencias para cuando estoy codeando para facilitar el debug.
+
+1:06:50
 
 ## Acamica
 

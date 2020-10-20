@@ -158,7 +158,23 @@ Un componente solo puede retornar un elemento a la vez
 
 `a.map((e) => e + 3)`. El método map _NO_ modifica el array.
 
-1:43:23
+### Styles
+
+Objetos de JS para estilizar. Importar un css y listo; no usamos _class_, sino **CLASSNAME**. 
+
+Para hacer un estilo inline, `style=({background: 'red'})` <-- objeto de JS para estilizar. Se pueden guardar en **variables**.
+
+Cambiar estilos de manera dinámica; la idea de usar una función es para aplicar condicionales!
+
+```js
+,color: this.props.task.done ? 'gray': 'black'
+// operador ternario - condicional en una sola línea
+// si this.props.task.done es true (?) el color del texto es 'gray'. En caso contrario ':', que esté en negro 'black'
+```
+
+### PropTypes
+
+Typos de datos de las propiedades, de los props
 
 ## Acamica
 

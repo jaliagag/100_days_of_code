@@ -176,7 +176,168 @@ Cambiar estilos de manera dinámica; la idea de usar una función es para aplica
 
 Tipos de datos de las propiedades, de los props. Advertencias para cuando estoy codeando para facilitar el debug.
 
-1:06:50
+### Forms
+
+Agregar información en un formulario que permita crear/pushear información.
+
+```js
+// importar la funcionalidad de recat y también la funcionalidad de los componentes que vienen  desde la biblioteca de react
+import React, { Component } from 'react';
+
+// crear una clase que represente un componente
+// hereda los componentes la funcionalidad
+
+export default class TaskForm extends Component {
+
+    state = {
+        title: ''
+        ,description: ''
+    }
+
+    onSubmit = e => {
+        //console.log('enviando')
+        console.log(this.state)
+        e.preventDefault();
+    }
+
+    onChange = e => {
+        //console.log(e.target.name, e.target.value)
+        //console.log(e.target.value)
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+  render() {
+      return (
+          <form onSubmit={ this.onSubmit }>
+              <input
+              type="text"
+              name="title" 
+              placeholder="Escribe una tarea"
+              onChange={ this.onChange }
+              value={this.state.title} />
+                <br />
+                <br />
+              <textarea
+              placeholder="escribe una descripcion"
+              name="description"
+              onChange={ this.onChange }
+              value={ this.state.description } />
+                <br />
+              <input type="submit" />
+          </form>
+      )
+  }
+}
+```
+
+### Passing Functions
+
+Pasar una función de un archivo a otro, a través de un props. En el archivo principal de la aplicación  agrego al componente que llamo un props que después puedo usar en el componente mismo.
+
+```js
+// archivo principal de la aplicación
+import React, { Component } from 'react';
+
+export default class App extends Component {
+  funcionCopada = () => {
+    console.log('Esta es una función copada que va a pasar como props');
+  }
+
+  render(){
+    return <div>
+    <HolaMundo funcionCopada= { this.funcionCopada }/>
+    </div>
+  }
+}
+
+// componente - como le agregué un atributo (funcionCopada) cuando llamaba el componente
+// ahora puedo usar ese atributo, que es una función, en el componente en sí
+
+import React, { Component } from 'react';
+
+export default class HolaMundo extends Component {
+  render() {
+    console.log(this.props) // debería mostrar {funcionCopada: f} por consola
+    // para ejecutarla
+    this.props.funcionCopada();
+    // ejecuto DESDE EL COMPONENTE la función que está en el archivo principal
+    return (
+      <h1>Hola Mundo</h1>
+    )
+  }
+}
+```
+
+### Eliminar y Actualizar
+
+```js
+// app.js
+// agregamos 2 métodos
+
+    deleteTask = id => {
+        const newTasks = this.state.tasks.filter(task => task.id !== id);
+        this.setState({ tasks: newTasks })
+    }
+
+    checkDone = id => {
+        const newTasks = this.state.tasks.map(task => {
+            if (task.id === id) {
+                task.done = !task.done
+            }
+            return task
+        })
+        this.setState({ task: newTasks })
+    }
+
+    // se los pasamos acá
+
+    <Tasks tasks={ this.state.tasks } deleteTask= { this.deleteTask } checkDone={ this.checkDone } />
+
+// Tasksssssssssss
+// se lo agregamos a este componente para que existe en los subcomponentes
+        return this.props.tasks.map(task => <Task 
+            task={ task } 
+            key={ task.id } 
+            deleteTask={ this.props.deleteTask }
+            checkDone={ this.props.checkDone } />)
+// se lo pasamos a task
+
+    render() {
+
+        const {task} = this.props
+
+        //const redColor = {background: 'red'}
+        return   <p style={this.StyleCompleted()}>
+            { task.title } - { task.description } - { task.done } - { task.id }
+            <input type="checkbox" onChange={ this.props.checkDone.bind(this, task.id) } ></input>
+            <button style={btnDelete} onClick={ this.props.deleteTask.bind(this, task.id) } >
+                x
+            </button>
+        </p>          
+    }
+
+```
+
+### Fetching Data
+
+De servidores externos. Bucle for en JSX
+
+```js
+// desde el state/estado en sus publicaciones voy a empezar a recorrer cada uno
+// con la función map
+// por cada aplicación que recorre, retorno un elemento JSX
+this.state.posts.map(post => {
+  return <div key={post.id}>
+    <h1>Título: { post.title } </h1>
+    <p>{ post.body} </p>
+  </div>
+```
+
+### Enrutador de React
+
+`npm install react-router-dom`
 
 ## Acamica
 

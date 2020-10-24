@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 // import './Task.css';
 
 class Task extends Component {
-
+æ
     StyleCompleted() {
         return {
             fontSize: '20px'

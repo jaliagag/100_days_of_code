@@ -433,3 +433,18 @@ var app = React.createElement('div', null,
 ```
 
 Definir funciones que reciben props como parámetro y devuelven elementos de REAct que describen cómo se va a renderizar ese componente
+
+## FreeCodeCamp
+
+<https://www.youtube.com/watch?v=4UZrsTqkcW4&t=1529s>
+
+```js
+npx create-react-app my-app
+cd my-app
+npm start
+```
+
+- Babel compiles new JS (ES6) into old JS (ES5).
+- WebPack - module bundler - bundling resources
+
+

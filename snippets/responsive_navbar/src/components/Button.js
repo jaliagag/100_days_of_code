@@ -19,5 +19,3 @@ export const Button = ({
         </Link>
     )
 }
-
-export default Button

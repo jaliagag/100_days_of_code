@@ -78,25 +78,20 @@ prevBtn.addEventListener('click', function(){
 }) 
 
 let inf = [];
-
 randomBtn.addEventListener('click', function(){
-    // let a = Math.floor(Math.random() * reviews.length)
-    // inf.unshift(a);
-    // console.log('numero random: ' + a);
-    // if (a === inf[1]) {
-    //     console.log(a + ' ', + inf[1])
-    //     currentItem = a + 1;
-    //     if (currentItem > reviews.length) {
-    //         currentItem = a - 1;
-    //     }
-    //     // let b = a + 1;
-    //     // if (b > reviews.length){
-    //     //     currentItem = a - 2;
-    //     //     console.log('resto ' + currentItem);
-    //     // } else {
-    //     //     currentItem = a + 1;  
-    //     // }
-    // }
-    currentItem = Math.floor(Math.random() * reviews.length);
+  let a = Math.floor(Math.random() * reviews.length)
+  inf.unshift(a);
+  if (a == inf[1]){
+    let b = a + 1;
+    if (b > reviews.length -1 ) {
+      currentItem = a - 2;
+      inf.unshift(currentItem);
+    } else {
+      currentItem = a + 1;
+      inf.unshift(currentItem);
+    }
+  } else {
+    currentItem = a;
+  }
     showPerson(currentItem);
 })

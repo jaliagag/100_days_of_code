@@ -21,6 +21,25 @@ def addOne(Number):
 
 addOne(4)
 
-# first calculated, then output added
+## first calculated, then output added
 
 addOne(2.1 + 3.8)
+
+## if statements
+
+```py
+if condition:
+    Action
+
+click = False
+
+Like = 0
+
+click = True
+
+if click == True: ## mind you the double =; it's for checking
+    Like += 1
+    click = False
+
+print(Like)
+```

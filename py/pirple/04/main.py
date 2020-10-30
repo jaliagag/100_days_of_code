@@ -12,6 +12,24 @@
 # Add another function that pushes all the rejected inputs into a separate global array called myLeftovers. If someone tries to add a value to myUniqueList but it's rejected (for non-uniqueness), it should get added to myLeftovers instead.
 
 myUniqueList = []
+myLeftovers = []
 
 def addThings(thing):
-    return myUniqueList.append(thing)
+    if thing in myUniqueList:
+        myLeftovers.append(thing)
+        return False
+    else:
+        myUniqueList.append(thing)
+        return True
+
+
+print(addThings(1))
+print(addThings(1))
+print(addThings(2))
+print(addThings(2))
+print(addThings(3))
+print(addThings(3))
+print(addThings(1))
+
+print(myUniqueList)
+print(myLeftovers)

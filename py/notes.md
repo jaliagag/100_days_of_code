@@ -60,7 +60,7 @@ print(Scores[0:2]) # 70,85
 print(Scores[2:]) # all the numbers to the end - 67.5, 90, 80
 Scores[0] = 75 # change a value
 Scores[1:3] = [] # remove values
-Scores[2] = ["Hello", "woeld"]
+Scores[2] = ["Hello", "world"]
 print(Scores[2][0]) # Hello
 Scores.append(82) # append to the end
 ```

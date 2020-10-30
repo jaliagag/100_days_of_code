@@ -43,3 +43,24 @@ if click == True: ## mind you the double =; it's for checking
 
 print(Like)
 ```
+
+## Lists
+
+```py
+TestList = ["element1", "element2", "element3"]
+
+# lists are zero indexed
+
+Scores = [70, 85, 67.5, 90, 80]
+print(Scores[0]) # output 70
+print(Scores[-1]) # last element - 80
+# accessing multiple numbers
+print(Scores[0:2]) # 70,85
+# start on X upto, NOT INCLUDING
+print(Scores[2:]) # all the numbers to the end - 67.5, 90, 80
+Scores[0] = 75 # change a value
+Scores[1:3] = [] # remove values
+Scores[2] = ["Hello", "woeld"]
+print(Scores[2][0]) # Hello
+Scores.append(82) # append to the end
+```

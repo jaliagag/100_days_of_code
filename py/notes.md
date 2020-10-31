@@ -64,3 +64,22 @@ Scores[2] = ["Hello", "world"]
 print(Scores[2][0]) # Hello
 Scores.append(82) # append to the end
 ```
+
+## For loops
+
+```py
+Word = "Hello"
+
+for w in Word: # w is the variable, what iterates (?)
+	print(w) # print outputs everything and adds a new line
+	if w == "e":
+		print("what a funny letter")
+```
+
+
+
+
+
+
+
+

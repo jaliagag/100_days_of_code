@@ -7,19 +7,22 @@ There are two different ways of transforming a program from a high-level program
 1. compilation: the source program is translated once (however, this act must be repeated each time you modify the source code) by getting a file (e.g., an .exe file if the code is intended to be run under MS Windows) containing teh machine code; now you can distribute the file worldwide; the program that performs this translation is called a compiter or translator;
 2. interpretation: you can translate the source program each time it has to be run; the progrma performing this kind of transformation is called an interpreter, as it interprets the code every time it is intended to be executed; it also means that you cannot just distribute the source code as-is, because the end user needs the interpreter to execute it.
 
-"""
+
+```py
 def FunctionName(input):
     action
     return output
+```
 
 if it is indented, it's part of the function
-"""
 
+```py
 def addOne(Number):
     Number += 1
     return print(Number)
 
 addOne(4)
+```
 
 ## first calculated, then output added
 
@@ -70,14 +73,124 @@ Scores.append(82) # append to the end
 ```py
 Word = "Hello"
 
+Letters = []
+
 for w in Word: # w is the variable, what iterates (?)
 	print(w) # print outputs everything and adds a new line
 	if w == "e":
 		print("what a funny letter")
+	Letters.append(w) # appends value of variable to the end on a list
+
+print(Letters)
+
+# Output: ['H', 'e', 'l', 'l', 'o']
+
+for l in Letters:
+  print(l)
+
+Numbers = [1, 2, 3, 4, 5]
+
+for i in Numbers:
+  if 1%2 == 0;
+    print("Par", i)
+  else:
+    print("impar", i)
+
+# range(start, stopping, steps|increments) upto but not including stopping value
+# default(optional_1, mandatory, optional_1)
+
+for num in range(10):
+  print(num)
+
+# output: 0
+#1
+#2
+#3
+#4
+#5
+#6
+#7
+#8
+#9
+
+Numbers = []
+
+for num in range(1,10,2):
+  Numbers.append(num)
+  print(num)
+
+print(Numbers)
 ```
 
+## While loops
 
 
+```py
+#while (condition):
+#  Action
+  
+counter = 1
+Sum = 0
+
+while (counter <=10):
+  # print(counter)
+  Sum = Sum + counter
+  counter += 1
+
+print(Sum)
+
+Letters = ['a, 'b', 'c', 'd', 'e',]
+
+Index = 0
+
+while (Index < len(Letters)):
+  print(Index)
+  print(Letters[index])
+  Index += 1
+
+height = 5000
+velocity = 50
+time = 0
+
+while (height > 0 ):
+  height = height - velocity
+  time += 1
+
+print(height)
+print(time)
+```
+
+## Breaking and continuing loops
+
+
+```py
+Participants = ["Jen", "Alex", "Tina", "Joe", "Ben"]
+position = 0
+
+for name in Participants:
+  if name == "Tina":
+    print("About to break")
+    break
+  print("About to increment")
+  position += 1
+
+print(position)
+# Once it reaches the break point it stops
+
+for i in range(len(Participants)):
+  if Participants[i] == "Joe":
+    break
+print(i)
+# we can use the variable declared in the for loop
+# When we reach a breaking point in a loop, the program doesn't execute anything after it
+
+for number in range(10):
+  if number%3 == 0:
+    print(number, 'divisible by 3')
+    Continue
+  print('Not divisible by 3')
+          
+```
 
 
 

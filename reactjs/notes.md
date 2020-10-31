@@ -447,4 +447,41 @@ npm start
 - Babel compiles new JS (ES6) into old JS (ES5).
 - WebPack - module bundler - bundling resources
 
+## ReactJS BA
+
+Un _framework_, entorno de trabajo o marco de trabajo es un conjunto estandarizado de conceptos, prácticas y criterios para enfocar un tipo de problemática particular que sirve como referencia para enfrentar y resolver nuevos problemas de índole similar.
+
+React es una librería open source diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de SPAs(single page applications). Fue creado y es mantenido (principalmente) por Facebook.
+
+Angujar es un Framework
+
+SPA: app de página única es una app web que cabe en una sola página con el propósito de dar una experiencia más fluida a los usuario - un único HTML pero varias rutas, como si fuera en HTML distintos, pero en realidad es el mismo HTML pero enrutado con REACT.
+
+En REACT todo lo que sea document.getElementById or document.querySelector --> NO VA MÁS.
+
+Componentes: en react un componente es un bloque de código reutilizable que cumpla con las siguientes propiedades
+
+- puede recibir propiedades inmutables
+- puede mutar su estado interno (en caso de tenerlo)
+- tiene la capacidad de representarse a si mismo en base a propiedades y su estado interno - básicamente cada componente debe poder pintarse en el HTML
+
+Funciones vs clases
+
+Antes solo se usaban clases. Desde los REACT Hooks, las funciones tienen más relevancia. Recomendado aprenderlo con funciones - si bien darle bola a las clases.
+
+React fragment - solucina el problema del wrapper sin generar un nodo extra; <> </>. A la hora de transpilar el código, no se genera nada. **USE IT** - Es más rápido tener menos nodos (milisegundos - pero más mejor no agregar nodos innecesarios).
+
+Los props se pasa como si fueran atributos de HTML. Entre los paréntesis del componente es donde recibe los props.
+
+Cada tag que usamos cuando llamamos al componente es llamado una _INSTANCIA_.
+
+
+
+
+
+
+
+
+
+
 

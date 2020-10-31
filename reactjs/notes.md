@@ -475,6 +475,9 @@ Los props se pasa como si fueran atributos de HTML. Entre los paréntesis del co
 
 Cada tag que usamos cuando llamamos al componente es llamado una _INSTANCIA_.
 
+Todo lo que está entre paréntesis lo considera como viniendo de JS.
+
+
 
 
 

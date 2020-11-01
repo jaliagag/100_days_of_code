@@ -1,4 +1,5 @@
 # VIM CHEATSHEET
+# VIM
 
 | key | acción |
 | ---- |---- |
@@ -49,9 +50,21 @@
 | p | pegar |
 
 
+## Mind you
 
+Los archivos principales y que hay que modificar para modificar la apariencia de nvim están en:
 
+- MAC: ~/.config/nvim > init.vim
+- Windows: 
+  - C:\Users\jaliaga\AppData\Local\nvim > init.vim
 
+```md
+set runtime^=~\.vim runtimepath+=~\.vim\after
+let &packpath=&runtimepath
+source ~\.vimrc
+```
+
+  - C:\Users\jaliaga > .vimrc 
 
 
 

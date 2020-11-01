@@ -192,6 +192,67 @@ for number in range(10):
           
 ```
 
+## Making Shapes with loops
+
+
+```py
+Length = 10
+
+for pos in range(1,Lenght+1):
+  print("c"*pos)
+
+# c
+# cc
+# ccc
+# cccc
+# ccccc
+# cccccc
+# ccccccc
+# ...
+
+Length = 10
+ToPrint = "a"
+
+for pos in range(1,Length+1):
+  print(ToPrint*pos)
+
+for pos in range(Length-1, 0,-1):
+  print(ToPrint*pos)
+
+# a
+# aa
+# aaa
+# aaaa
+# aaa
+# aa
+# a
+
+```
+
+## Nested Loops
+
+
+```py
+
+
+for row in range(5):
+  if row%2 == 0:
+    for column in range(1,6):
+      if column % 2 == 1:
+	if column != 5:
+	  print(" ",end="")
+	else:
+	  print(" ")
+      else:
+	print("|")
+    #print(" | | ")
+    #      12345
+  else:
+    print("-----")
+
+
+```
+
 
 
 

@@ -7,18 +7,23 @@
 
 #Try to determine the maximum width and height that your terminal and screen can comfortably fit without wrapping. If someone passes a value greater than either maximum, your function should return False.
 
+#rows = 5
+
+
 def tiktak(rows, columns):
     for row in range(rows):
         if row % 2 == 0:
             for column in range(1,columns):
                 if column % 2 == 1:
-                    if column != columns:
+                    if column != 5:
                         print(" ",end="")
                     else:
                         print(" ")
-                 else:
+                else:
                     print("|")
         else:
             print("-----")
+    return True
 
 tiktak(5, 5)
+

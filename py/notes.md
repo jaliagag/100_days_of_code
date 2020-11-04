@@ -246,12 +246,64 @@ for row in range(5):
       else:
 	print("|")
     #print(" | | ")
-    #      12345
+    #      12345 
   else:
     print("-----")
 
 
 ```
+
+## Dictonaries and Sets
+
+
+```py
+
+Sets = {"element1", "element2", "element1"}
+
+# elements remove repeated elements
+# repetition of elements are removed
+# sets don't have a specified order - we only want to know if it's there
+
+if "element1" in Sets:
+  print("yes")
+
+CountryList = []
+
+for i in range(5):
+  Country = input("enter your country: ")
+  CountryList.append(Country)
+
+CountrySet = set(CountryList)
+print(CountryList)
+print(CountrySet)
+
+# set() --> keyword - turns a datatype into a set
+
+if "Brazil" in CountrySet:
+  print("attended")
+
+# Dictionaries
+
+dictionary = {"key":"value", "key2":"value"}
+
+# values in dictionaries are unique
+
+CountryDictionary = {}
+for Country in CountryList:
+  if Country in CountryDictionary:
+    CountryDictionary[Country] += 1
+  else:
+    CountryDictionary[Country] = 1
+
+print(CountryDictionary)
+# output (after input of 5 countries)
+# CountryDictionary[Country] --> creates a key value pair OR adds something
+# to the variable. instead of using the brackets to check the indexes of 
+# values, we use the brackets to check if the value exists (sth like this); 
+# there is no order in parenthesis nor in sets
+
+```
+
 
 
 

@@ -317,6 +317,79 @@ while(True): #(True == True)
     print('no shoe sizes', purchaseSize)
 ```
 
+## Input and Output
+
+```py
+# to convert into a string
+Name = input("What's your name?")
+print = str(Name)
+# to convert into an int
+Age = input("How old are you?")
+print = int(Age)
+
+
+Scores = []
+
+for i in range(5):
+  value = float(input("Please, enter the score for student " + str(i+1) + ":\n"))
+  Scores.append(value)
+
+print(Scores)
+
+
+# File = open("Filename","r", "a", "w", "r+" ) # "read", "append", "write", "read and write"
+# File.close() # --> once finished with the file, be sure to close the file
+# Writing: If the file exists, it will overwrite it; if it does not exists, it will create it
+VacationSpots = ["Cordoba", "Buenos Aires", "San Juan", "Bariloche"]
+
+VacationFile = open("VacationPlaces", "w")
+
+for Spots in VacationSpots:
+  VacationFile.write(str(Spots + ", " + "\n")) # HAS TO BE A STRING
+
+VacationFile.close()
+
+VacationFile = open("VacationPlaces", "r")
+
+FirstLine = VacationFile.readline()
+print(FirstLine)  # Cordoba
+SecondLine = VacationFile.readline()
+print(SecondLine) # Cordoba
+
+for line in VacationFile:
+ print(line)  # delete new line created with print: print(line, end="")
+ # San Juan
+ # Bariloche - the pointer moves along with us
+
+#TheWholeFile = VacationFile.read()
+#print(TheWholeFile())
+
+VacationFile.close()
+
+FinalSpot = "Villa La Angostura"
+
+VacationFile = open("VacationPlaces", "a")
+VacationFile.write(FinalSpot)
+VacationFile.close()
+
+VacationFile = open("VacationPlaces", "r")
+for line in VacationFile:
+  print(line, end = "")
+
+VacationFile.close()
+
+with open("VacationPlaces", "r") as VacationFile:
+  for line in VacationFile:
+    print(line, end="")
+
+
+
+
+
+
+```
+
+
 
 
 

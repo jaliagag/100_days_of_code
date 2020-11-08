@@ -378,9 +378,10 @@ for line in VacationFile:
 
 VacationFile.close()
 
-with open("VacationPlaces", "r") as VacationFile:
-  for line in VacationFile:
-    print(line, end="")
+for i in range(5):
+  with open("VacationPlaces"+str(i), "r") as VacationFile:
+    for line in VacationFile:
+      print(line, end="")
 
 
 

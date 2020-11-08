@@ -3,13 +3,19 @@ import ReactDom from "react-dom";
 import './index.css';
 
 // capitalize the first letter of a function to indicate React that it's a component!
+//
+
+const author = 'Neal Stephenson'
+const title = 'Seveneves'
+const img = 'https://images-na.ssl-images-amazon.com/images/I/31vRcR-gi3L._SX248_BO1,204,203,200_.jpg'
 
 function BookList() {
 	// to render a component, it must be capitalized
 	return (
 	  <>
 	    <section className='booklist'>
-	      <Book />
+	      <Book job='developer' />
+	      <Book title='random title' number={22}/>
 	    </section>
 	  </>
 	);
@@ -20,22 +26,20 @@ function BookList() {
 //};
 //const Message = () => <p>This is a message</p>;
 
-const Book = () => {
-  const title = 'Seveneves'
-  const author = 'Neal Stephenson'
+const Book = (props) => {
   return (
     <article className='book'>
-      <Image />
+      <img src={img} alt='' />
       <h1>{title}</h1>
-      <h4 style={{color:'·617d98', fontSize:'0.75rem', marginTop:'0.25rem'}}>{author.toUpperCase()}</h4>
-    <p>{6+6}</p>
+      <h4 style={{color:'#617d98', fontSize:'0.75rem', marginTop:'0.25rem'}}>{author.toUpperCase()}</h4>
+     
+      <p>{props.job}</p>
+      <p>{props.title}</p>
+      <p>{props.number}</p>
     </article>
   )
 }
 
-const Image = () => (
-  <img src='https://images-na.ssl-images-amazon.com/images/I/31vRcR-gi3L._SX248_BO1,204,203,200_.jpg' alt='' />
-)
 
 //const Title = () => <h1>Seveneves</h1>
 //  const Author = () => <h4 style={{color:'·617d98', fontSize:'0.75rem', marginTop:'0.25rem'}}>Neal Stephenson</h4>
@@ -59,10 +63,8 @@ ReactDom.render(<BookList />, document.getElementById("root"));
 // formatting
 // #####################
 // NESTED COMPONENTS
-// 2:10:21 --> starting with props
-//
-//
-//
+// #####################
+// convention: use props; and it is an object; 
 //
 //
 //

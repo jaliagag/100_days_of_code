@@ -36,4 +36,6 @@ body {
 
 .book .h4 {
   color: #617d98;
-  font
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}

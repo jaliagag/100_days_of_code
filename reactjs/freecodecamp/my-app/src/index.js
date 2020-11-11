@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDom from "react-dom";
 import './index.css';
+import {books} from './books' // this was exported using regular JS
+import Book from './Book' // this was exported using the full REACT shabang - this is the name of the component that will be used in JSX
 
 // capitalize the first letter of a function to indicate React that it's a component!
 //
@@ -32,48 +34,34 @@ function BookList() {
 	);
 } // Greeting would be our root component
 */
-const books = [
-  {
-    img: 'https://m.media-amazon.com/images/I/31vRcR-gi3L._AC_UY327_QL65_.jpg'
-    ,title:'Seveneves'
-    ,author: 'Neal Stephenson'
-  },
-  {
-    img: 'https://m.media-amazon.com/images/I/A1u+2fY5yTL._AC_UY327_QL65_.jpg'
-    ,title:'Dune'
-    ,author: 'Frank Herbert'
-  }
-]
 
-const names = ['joe', 'pau', 'simba']
-const newName = names.map((name)=>{
-    return <h1>{name}</h1>
-  }
-)
 
-console.log(newName)
+//const names = ['joe', 'pau', 'simba']
+//const newName = names.map((name)=>{
+   // return <h1>{name}</h1>
+ // }
+//)
+
+//console.log(newName)
 
 function BookList() {
 	// to render a component, it must be capitalized
-	return <section className='booklist'>{names}</section>;
+//	return <section className='booklist'>{names}</section>;
+	return <section className='booklist'>{books.map((book)=>{
+//	  return 'hello'; // returns hellohello, since there are only 2 items
+	  return (
+	    <Book key={book.id} book={book}></Book>
+	  ) // Book --> component
+	  //   book --> attribute
+	  //   book --> object created on 61
+	})}</section>;
+  // in react, when we return a list, we need to return a KEY
 }
 
 //const Person = () => {
 //	return <h2>Jogn Doe</h2>;
 //};
 //const Message = () => <p>This is a message</p>;
-
-const Book = (props) => {
-  const {img, title, author} = props
-  return (
-    <article className='book'>
-      <img src={img} alt='' />
-      <h1>{title}</h1>
-      <h4>{author}</h4>
-      {props.children}
-    </article>
-  )
-}
 
 // different ways of accessing props
 // 

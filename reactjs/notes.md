@@ -447,6 +447,10 @@ npm start
 - Babel compiles new JS (ES6) into old JS (ES5).
 - WebPack - module bundler - bundling resources
 
+Reacts --> functions reacts provides to complete various tasks. If it starts with **use**, that's a hook.
+
+
+
 ## ReactJS BA
 
 Un _framework_, entorno de trabajo o marco de trabajo es un conjunto estandarizado de conceptos, prácticas y criterios para enfocar un tipo de problemática particular que sirve como referencia para enfrentar y resolver nuevos problemas de índole similar.

@@ -2,7 +2,7 @@
 // https://es.reactjs.org/docs/uncontrolled-components.html
 // https://medium.com/better-programming/the-complete-guide-to-forms-in-react-d2ba93f32825
 // https://scotch.io/courses/10-react-challenges-beginner/adding-calculator <<-- THE POST
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom'
 import './App.css';
 

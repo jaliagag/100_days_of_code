@@ -422,11 +422,22 @@ while(True): # True == True
       currentField[MoveColumn][MoveRow] = "O"
       Player = 1
   drawField(currentField)
+```
 
+```py
+ParticipantNumber = 5
+participantData = []
 
+resgisteredParticipants = 0
 
-
-
+while ( resgisterParticipants < ParticipantNumber):
+  tempPartData = [] # name, country of origin, age
+  name = input('what's your name? ')
+  country = input('where do you come from? ')
+  age = int(input('how old are you? '))
+  tempPartData.append(name, country, age)
+  participantData.append(tempartData)
+  
 ```
 
 

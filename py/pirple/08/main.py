@@ -1,58 +1,31 @@
-maxNumber = 2
-participantData = []
+# Homework Assignment #8: Input and Output (I/O)
 
-#
-outputFile = open("ParticipantData", "w") # if i don't have the file, it is created; INFORMATION IS OVERWRITTEN
+#Details:
+ 
+#Create a note-taking program. When a user starts it up, it should prompt them for a filename.
 
-registered = 0
+#If they enter a file name that doesn't exist, it should prompt them to enter the text they want to write to the file. After they enter the text, it should save the file and exit.
 
-while ( registered < maxNumber):
-  tempPartData = [] # name, country of origin, age
-  name = input("what's your name? ")
-  country = input('where do you come from? ')
-  age = int(input('how old are you? '))
-  tempPartData.append(name)
-  tempPartData.append(country)
-  tempPartData.append(age)
-  participantData.append(tempPartData)
-  # print("##########")
-  registered += 1
+#If they enter a file name that already exists, it should ask the user if they want:
 
-# print(participantData)
+#A) Read the file
 
-# writing to a file
-# either at the end, or every time a participant is added
+#B) Delete the file and start over
 
-for participant in participantData:
-    for data in participant:
-        outputFile.write(str(data)) # we can only write strings
-        outputFile.write(" ")
-    outputFile.write("\n")
+#C) Append the file
 
-outputFile.close()
+#If the user wants to read the file it should simply show the contents of the file on the screen. If the user wants to start over then the file should be deleted and another empty one made in its place. If a user elects to append the file, then they should be able to enter more text, and that text should be added to the existing text in the file. 
 
-inputFile = open("ParticipantData", "r")
+#Extra Credit:
 
-inputList = []
+#Allow the user to select a 4th option:
 
-for line in inputFile:
-    tempParticipant = line.strip("\n").split()
-    # strip removes the parameter
-    # split on strings, it splits it by default into spaces - ["joe", "arg", "31"]
-    inputList.append(tempParticipant)
+#D) Replace a single line
 
-# Dictinary for age, how many times a specific age is repeated
+#If the user wants to replace a single line in the file, they will then need to be prompted for 2 bits of information:
 
-Age = {}
+#1) The line number they want to update.
 
-for part in inputList:
-    # -1 the last element in the array
-    if part[-1] in Age:
-        Age[part[-1]] += 1
-        # into the Age dictionary
-    else:
-        Age[part[-1]] = 1 # if the valeu is not in the dictionary, it creates the value
+#2) The text that should replace that line.
 
-print(Age)
-
-inputFile.close()
+fileName = input('wharup yo! please input a name for your brand new file!: ')

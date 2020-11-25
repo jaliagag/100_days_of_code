@@ -440,8 +440,10 @@ while ( resgisterParticipants < ParticipantNumber):
   
 ```
 
-
-
+- used for both writing and reading a file: r+
+- to open a file: myfile = open("myfile.txt", "r")
+- myFile = open(file = "VacationPlaces","w")
+- if we use open('test.txt') without r or w, we are opening a file for read only
 
 
 

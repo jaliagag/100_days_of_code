@@ -29,56 +29,58 @@
 #2) The text that should replace that line.
 
 import os
+import sys
 
 thisPath = os.listdir()
 
-def writeToTheFile(x):
-    #print(x)
-#def writeToTheFile(file2write):
-    var = False
-    while var == False:
-        file2Modify = open(x, "w")
-        aEscribir = input('what you want to write? ')
-        if os.stat(x).st_size == 0:
-            file2Modify.write(aEscribir)
-            print('added!')
-        if os.stat(x).st_size != 0:
-            file2Modify.append(aEscribir)
-            print('added!')
+def fileExists(x):
+    qUno = int(input('file already exists - would you like to \n(1) add to existing file or \n(2) replace the entire file or \n(3) cancel the operation? \n(please, input either 1, 2 or 3) '))
+    if qUno == 1:
+        add2File(x)
+    if qUno == 2:
+        write2File(x)
+    if qUno == 3:
+        exit()
+    return
 
+def add2File(which):
+    file = open(which, "a")
+    what = input("what do you want to add? ")
+    file.write(what)
+    file.write("\n")
+    file.close()
+    print('added!')
+    exit()
+    return
 
-        again = input('wanna write something else? (y or n)')
-        if again is "n":
-            var = True
-        elif again is "y":
-            var = False
-        else:
-            print('wrong inpunt')
-            again
-            
-        file2Modify.close()
+def write2File(which):
+    file = open(which, "w")
+    what = input("what do you want to add? ")
+    file.write(what)
+    file.write("\n")
+    file.close()
+    print('written!')
+    exit()
+    return
 
-        #tempPartData.append(aEscribir)
-#        file2write.append(aEscribir)
-#        again = input('wanna write something again? (y or n) ')
-#        if again == y:
-#            var = False
-#        elif again == n:
-#            var = True
+def fileNotExists(x):
+    file = open(x, "w")
+    qDos = input('what do you want to write to this magnificent new file? ')
+    file.write(qDos)
+    file.write("\n")
+    file.close()
+    return
 
-def createFile ():
+def notas():
     var = False
     fileName = input('wharup yo! please input a name for your brand new file!: ')
     while var == False:
         if fileName in thisPath:
-            print('name taken!')
-            fileName = input('please, use another name for the file you want to create: ')
+            fileExists(fileName)
+            var = True 
         else:
-            print('file to be created!...')
-            outputFile = open(fileName, "w")
+            fileNotExists(fileName)
             var = True
-            writeToTheFile(fileName)
-            outputFile.close()
-
-createFile()
+    return
+notas()
 

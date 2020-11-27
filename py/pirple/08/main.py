@@ -34,14 +34,39 @@ import sys
 thisPath = os.listdir()
 
 def fileExists(x):
-    qUno = int(input('file already exists - would you like to \n(1) add to existing file or \n(2) replace the entire file or \n(3) cancel the operation? \n(please, input either 1, 2 or 3) '))
+    qUno = int(input('wait up... file already exists! - would you like to \n(1) add to existing file, \n(2) read the file, \n(3) create a new file, \n(4) replace a single line, \n(5) cancel the operation, \n(6) or delete the file? \n(please, input either 1, 2, 3, 4, 5 or 6) '))
     if qUno == 1:
         add2File(x)
     if qUno == 2:
-        write2File(x)
-    if qUno == 3:
+        f = open(x, "r")
+        print(f.read())
+        f.close()
         exit()
+    if qUno == 3:
+        write2File(x)
+    if qUno == 4:
+        replaceLine(x)
+    if qUno == 5:
+        exit()
+        print('bye!')
+    if qUno == 6:
+        os.remove(x)
+        print('file deleted!')
     return
+
+def replaceLine(which):
+    f = open(which, "r")
+    listLines = f.readlines()
+    lineNum = int(input('which line would you like to replace? '))
+    lineNum -= 1
+    whatReplace = input('with what do you want to replace that filthy line? ')
+    f = open(which, "w")
+    listLines[lineNum] = whatReplace + "\n"
+    f.writelines(listLines)
+    f.close()
+
+    print('replaced!')
+    exit()
 
 def add2File(which):
     file = open(which, "a")
@@ -73,7 +98,7 @@ def fileNotExists(x):
 
 def notas():
     var = False
-    fileName = input('wharup yo! please input a name for your brand new file!: ')
+    fileName = input('welcome! please input a name for your brand new file!: ')
     while var == False:
         if fileName in thisPath:
             fileExists(fileName)

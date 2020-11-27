@@ -28,4 +28,57 @@
 
 #2) The text that should replace that line.
 
-fileName = input('wharup yo! please input a name for your brand new file!: ')
+import os
+
+thisPath = os.listdir()
+
+def writeToTheFile(x):
+    #print(x)
+#def writeToTheFile(file2write):
+    var = False
+    while var == False:
+        file2Modify = open(x, "w")
+        aEscribir = input('what you want to write? ')
+        if os.stat(x).st_size == 0:
+            file2Modify.write(aEscribir)
+            print('added!')
+        if os.stat(x).st_size != 0:
+            file2Modify.append(aEscribir)
+            print('added!')
+
+
+        again = input('wanna write something else? (y or n)')
+        if again is "n":
+            var = True
+        elif again is "y":
+            var = False
+        else:
+            print('wrong inpunt')
+            again
+            
+        file2Modify.close()
+
+        #tempPartData.append(aEscribir)
+#        file2write.append(aEscribir)
+#        again = input('wanna write something again? (y or n) ')
+#        if again == y:
+#            var = False
+#        elif again == n:
+#            var = True
+
+def createFile ():
+    var = False
+    fileName = input('wharup yo! please input a name for your brand new file!: ')
+    while var == False:
+        if fileName in thisPath:
+            print('name taken!')
+            fileName = input('please, use another name for the file you want to create: ')
+        else:
+            print('file to be created!...')
+            outputFile = open(fileName, "w")
+            var = True
+            writeToTheFile(fileName)
+            outputFile.close()
+
+createFile()
+

@@ -48,7 +48,33 @@ board(6, 7)
 
 campo = []
 
+turn = 0
+score = 0
+counter = 0
 
+def changeTurn():
+    global turn
+    if turn == 1:
+        turn = 0
+    elif turn == 0:
+        turn = 1
+
+def wrong(param):
+    if param <= 0 or param > 7:
+        print('wrong column number - please, input a valid column number, 1 through 7')
+        changeTurn()
+
+while counter < 10:
+    counter += 1
+    if turn == 0:
+        play = int(input('player 1: select a column 1 - 7 to make your move: '))
+        wrong(play)
+    if turn == 1:
+        play = int(input('player 2: select a column 1 - 7 to make your move: '))
+        wrong(play)
+    changeTurn()
+
+    print(counter)
 
 
 

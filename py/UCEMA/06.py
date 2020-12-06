@@ -1,4 +1,4 @@
-print("Multiplicación")
+"""print("Multiplicación")
 print(5 * 4)
 
 print("División")

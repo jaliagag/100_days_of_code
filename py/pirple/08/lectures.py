@@ -65,6 +65,7 @@ for part in inputList:
 
 print(Age)
 Oldest = 0
+
 Youngest = 100
 mostOccurringAge = 0
 counter = 0

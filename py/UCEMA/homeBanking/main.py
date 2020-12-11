@@ -3,6 +3,7 @@ from mostrar import *
 from pagarServicios import *
 from transferir import *
 from salir import * 
+from pathlib import Path
 
 a = "##########################"
 
@@ -11,6 +12,18 @@ b = print("BIENVENIDO A PYBANKING")
 print(a)
 
 y = input("Ingrese su nombre: ")
+
+
+file = open(y, "w")
+file.write(f"hola")
+Path(f"{y}").stat()
+file_size =Path(f"{y}").stat().st_size
+if file_size == 0:
+    print("archivo vacío")
+else:
+    print("con cosas")
+file.close()
+
 
 z = 0
 
@@ -37,5 +50,4 @@ while z == 0:
      
 #if c == 1:
 
-    
     

@@ -19,7 +19,7 @@
  *
  */
 
-var a = 1041
+var a = 32
 
 let binGap = (number) => {
   let b = a.toString(2)
@@ -30,19 +30,19 @@ let binGap = (number) => {
   let d = b.split("")
   
   // substraction elements
-  let biggest = 0
-  let smallest = 0
+  let range = 0;
+  let oneQ = 0;
 
   for (i = 0 ; c > i ; i++){
     if (d[i] == 1){
-      if (i <= smallest) {
-	smallest = i + 1;
-      } else if (i){
-
-      }
+      oneQ += 1
+      range = (i+1) - range
     }
   }
-  console.log(smallest)
+  console.log(range)
+  if (oneQ == 1) {
+    return 0
+  }
 }
 
 binGap(a)

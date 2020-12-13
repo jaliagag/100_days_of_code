@@ -18,27 +18,36 @@
  * https://github.com/yaseenshaik/codility-solutions-javascript
  *
  */
-a = 9 
+a = 53 
 
-let binGap = (n) => {
-  let a = n.toString(2);
-  let b = a.split("");
-  // first 1
-  let x = b.indexOf("1")
-  console.log(x)
-  // no 1 = -1 = 0000
-  //
-  // new array
-  let y = b.slice(x + 0);
-  let z = y.indexOf("1");
-  console.log(y);
-  let gaps = [];
-
-  gaps.push(z);
-  console.log(gaps)
+let getGaps = (binaryArray, gaps) => {
+  // position of first 1
+  let x = binaryArray.indexOf("1");
+  if (x > -1){
+    // new array
+    let y = binaryArray.slice(x + 1);
+    // position of second 1
+    let z = y.indexOf("1");
+    if (z > 0) {
+      gaps.push(z);
+    }
+    return getGaps(y.slice(z + 1), gaps);
+  }
+  // largest array
+  return (gaps.length > 0) ? Math.max.apply(Math, gaps): 0;
 }
 
-binGap(a)
+let binGap = (n) => {
+  // convert to binary
+  if (n === parseInt(n, 10)){
+    let a = n.toString(2);
+    let b = a.split("");
+    return getGaps(b, []);
+  }
+  return 0
+}
+
+console.log(binGap(a))
 /*
 var a = 529
 

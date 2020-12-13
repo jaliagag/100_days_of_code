@@ -74,5 +74,30 @@ const prices = [1500, 2000, 1300]
 prices.filter((asdf) => asdf > 1700) // [2000]
 ```
 
+7. Map()
+
+The map() method is similar to the filter() method in terms of returning a new array. However, the only difference is that it is used to modify items.
+
+```js
+const prices = [1500, 2000, 1300];
+
+prices.map((item) => item*0.75)
+```
+
+8. Reduce()
+
+The reduce() method can be used to transform an array into something else, which could be an integer, an object, a chain of promises ( sequential execution of promises) etc. For practical reasons, a simple use case would be to sum a list of integers. In short, it “reduces” the whole array into one value.
+
+```js
+const weeklyExpenses = [500, 150, 700, 1100]
+
+weeklyExpenses.reduce((first, last) => first + last );
+
+```
+
+
+
+
+
 
 source <https://davidwalsh.name/essential-javascript-functions>

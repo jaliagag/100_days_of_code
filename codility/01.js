@@ -18,7 +18,7 @@
  * https://github.com/yaseenshaik/codility-solutions-javascript
  *
  */
-a = 53 
+a = 1041 
 
 let getGaps = (binaryArray, gaps) => {
   // position of first 1
@@ -31,6 +31,7 @@ let getGaps = (binaryArray, gaps) => {
     if (z > 0) {
       gaps.push(z);
     }
+    console.log(y);
     return getGaps(y.slice(z + 1), gaps);
   }
   // largest array

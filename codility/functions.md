@@ -54,5 +54,25 @@ age.some((person) => person >= 3);
 // true
 ```
 
+5. Every()
+
+The every() method loops through the array, checks every item, and returns true or false. Same concept as some(). Except every item must satisfy the conditional statement, otherwise, it will return false.
+
+```js
+const age = [12, 15, 23]
+
+age.every((person) => person >= 18); // false
+```
+
+6. Filter()
+
+The filter() method creates a new array with all elements that pass the test.
+
+```js
+const prices = [1500, 2000, 1300]
+
+prices.filter((asdf) => asdf > 1700) // [2000]
+```
+
 
 source <https://davidwalsh.name/essential-javascript-functions>

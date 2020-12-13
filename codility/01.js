@@ -18,8 +18,29 @@
  * https://github.com/yaseenshaik/codility-solutions-javascript
  *
  */
+a = 9 
 
-var a = 32
+let binGap = (n) => {
+  let a = n.toString(2);
+  let b = a.split("");
+  // first 1
+  let x = b.indexOf("1")
+  console.log(x)
+  // no 1 = -1 = 0000
+  //
+  // new array
+  let y = b.slice(x + 0);
+  let z = y.indexOf("1");
+  console.log(y);
+  let gaps = [];
+
+  gaps.push(z);
+  console.log(gaps)
+}
+
+binGap(a)
+/*
+var a = 529
 
 let binGap = (number) => {
   let b = a.toString(2)
@@ -32,21 +53,44 @@ let binGap = (number) => {
   // substraction elements
   let range = 0;
   let oneQ = 0;
-
+  let asdf = 0;
   for (i = 0 ; c > i ; i++){
     if (d[i] == 1){
-      oneQ += 1
-      range = (i+1) - range
+      oneQ += 1;
+      if (i == 0){
+	range = 1
+	asdf = 1;
+      } else {
+	range = i
+      }
+      if (range-asdf != 1){
+	if (range-asdf > asdf){
+	  console.log("rabge: "+ range + " " + "asdf : "+ asdf)
+	  asdf = range-asdf
+	  console.log("asdf "+asdf)
+	}
+      }
+
+      //range = i - range
+      //console.log(range)
+      /*for (h = i ; c > h ; h++) {
+	if(d[h] == 1){
+	  console.log("otro 1")
+	  range = i - h
+	}
+      }*//*
     }
   }
-  console.log(range)
-  if (oneQ == 1) {
+  if (oneQ == 1 || range == 0) {
     return 0
+  } else {
+    return asdf
   }
+
 }
 
-binGap(a)
-
+console.log(binGap(a))
+*/
 
 
 

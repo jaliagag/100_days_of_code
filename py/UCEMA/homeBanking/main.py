@@ -1,4 +1,5 @@
 import os
+import time
 from vars import *
 from ingresar import *
 from mostrar import *
@@ -17,14 +18,18 @@ from pathlib import Path
 
 #y
 
+print("Bienvenido", y)
+time.sleep(1)
 
-file = open(y, "w+")
-gato = file.read()
-#if gato == "":
-file_size = Path(f"{y}").stat().st_size
-if file_size == 0:
-    file.write("0") 
-file.close()
+check = os.path.isfile(y)
+if check == False:
+    file = open(y, "x")
+    file.close()
+    file_size = Path(f"{y}").stat().st_size
+    if file_size == 0:
+        file = open(y, "w+")
+        file.write("0") 
+        file.close()
 #    print("archivo vacío")
 #else:
 #    print("con cosas")
@@ -44,7 +49,7 @@ while z == 0:
     if c == 2:
         ingresar()
     if c == 3:
-        print("3")
+        transf()
     if c == 4:
         print("4")
     if c == 5:

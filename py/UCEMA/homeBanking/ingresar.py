@@ -3,8 +3,19 @@ from vars import y
 
 def depositar(n):
     file = open(y, "r")
-    print("el archivo tiene",file.read())
+    value = file.read()
     file.close()
+
+    file = open(y, "w+")
+    add = int(value) + int(n)
+    file.write(str(add))
+    file.close()
+
+    print("Depósito realizado con éxito")
+    file = open(y, "r")
+    finalV = file.read()
+    file.close()
+    print("Saldo disponible", finalV)
 
 def ingresar():
     a = 0
@@ -17,7 +28,6 @@ def ingresar():
             print("Procesando la operación...")
             time.sleep(1)
             depositar(b)
-            print("ok")
             c = input("¿Desea ingresar más dinero? (s / n) ")
             if c == "s":
                 a = 0

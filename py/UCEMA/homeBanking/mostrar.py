@@ -1,6 +1,6 @@
 from vars import y
 
 def mostrar():
-    file = open(y, "w+")
-    print(file.read()) 
+    file = open(y, "r")
+    print("Su saldo consolidado es de: ",file.read()) 
     file.close()

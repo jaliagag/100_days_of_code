@@ -18,9 +18,6 @@ from pathlib import Path
 
 #y
 
-print("Bienvenido", y)
-time.sleep(1)
-
 check = os.path.isfile(y)
 if check == False:
     file = open(y, "x")

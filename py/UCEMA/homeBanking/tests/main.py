@@ -1,20 +1,38 @@
 import os
+import pickle
 from pathlib import Path
 
 
 y = input('who the fuck are you? ')
-
+b = input("ingresá algo: ")
+data = [0, []]
 check = os.path.isfile(y)
 if check == False:
+
     file = open(y, "x")
     file.close()
     file_size = Path(f"{y}").stat().st_size
     if file_size == 0:
-        file = open(y, "w+")
-        file.write("0\n") 
-        file.write("agenda = {}")
+        # creates a binary file and adds information on line 8
+        file = open(y, "wb")
+        pickle.dump(data,file)
         file.close()
-#
+        
+        # open file and get elements on the second elemento of the list
+        f = open(y,"rb")
+        read = pickle.load(f)
+        print(read[1])
+        f.close()
+
+        # open file and write to element 2, which is another list
+        t = open(y, "wb")
+        read[1].append(b)
+        t.close()
+
+        p = open(y,"rb")
+        e = pickle.load(p)
+        print(e)
+        f.close()
 print("REALIZAR UNA TRANSFERENCIA") 
 print("""
         1 Realizar una transferencia 
@@ -22,6 +40,8 @@ print("""
         3 Agendar destinatario
         """)
 x = input()
+
+
 if int(x) == 2:
     # open file and read LINE 2
     # get values from such line
